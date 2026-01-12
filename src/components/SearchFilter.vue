@@ -3,18 +3,18 @@
     <input
       class="input"
       type="text"
-      placeholder="Search..."
+      placeholder="Potraži..."
       v-model="localQuery"
     />
 
     <select class="input" v-model.number="localMaxTime">
-      <option :value="0">Any time</option>
+      <option :value="0">Bilo koje vrijeme</option>
       <option :value="10">≤ 10 min</option>
       <option :value="15">≤ 15 min</option>
       <option :value="20">≤ 20 min</option>
     </select>
 
-    <button class="btn" @click="clear">Clear</button>
+    <button class="btn" @click="clear">Obriši</button>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <section>
-    <h1>Favorites</h1>
+    <h1>Omiljeni</h1>
 
-    <p v-if="store.favoriteIds.length === 0">No favorites yet.</p>
+    <p v-if="store.favoriteIds.length === 0">Nema omiljenih još.</p>
 
     <div class="list">
       <RecipeCard
@@ -39,7 +39,8 @@ function openDetail(id) {
 <style>
 .list {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
+  margin-top: 12px;
 }
 </style>

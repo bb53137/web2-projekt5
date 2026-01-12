@@ -1,11 +1,11 @@
 <template>
   <section v-if="loading">
-    <p>Loading...</p>
+    <p>Učitavanje...</p>
   </section>
 
   <section v-else>
     <div v-if="!recipe">
-      <h1>Recipe not found</h1>
+      <h1>Recept nije pronađen</h1>
     </div>
 
     <div v-else>
@@ -13,7 +13,7 @@
       <p>{{ recipe.timeMin }} min • {{ recipe.level }}</p>
 
       <button @click="store.toggleFavorite(recipe.id)">
-        {{ store.favoriteIds.includes(recipe.id) ? 'Remove favorite' : 'Add favorite' }}
+        {{ store.favoriteIds.includes(recipe.id) ? 'Ukloni iz omiljenih' : 'Dodaj u omiljene' }}
       </button>
 
       <h3>Ingredients</h3>
@@ -26,7 +26,7 @@
         <li v-for="(s, idx) in recipe.steps" :key="idx">{{ s }}</li>
       </ol>
 
-      <RouterLink to="/recipes">Back</RouterLink>
+      <RouterLink to="/recipes">Nazad</RouterLink>
     </div>
   </section>
 </template>

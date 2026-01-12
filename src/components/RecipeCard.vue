@@ -20,7 +20,7 @@
       </span>
     </div>
 
-    <button class="btn" @click="emit('open', recipe.id)">Open</button>
+    <button class="btn" @click="emit('open', recipe.id)">Otvori</button>
   </article>
 </template>
 
@@ -49,6 +49,7 @@ const emit = defineEmits(['toggle-fav', 'open'])
 }
 
 .star {
+  color: var(--accent);
   background: none;
   border: none;
   font-size: 18px;
@@ -75,8 +76,9 @@ const emit = defineEmits(['toggle-fav', 'open'])
 }
 
 .fav {
-  outline: 2px solid rgba(0,0,0,0.3);
+  outline: 2px solid var(--accent);
 }
+
 
 .btn {
   margin-top: 8px;

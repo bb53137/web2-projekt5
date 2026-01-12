@@ -1,15 +1,15 @@
 <template>
   <section>
-    <h1>Recipes</h1>
+    <h1>Recepti</h1>
 
-    <p v-if="store.loading">Loading...</p>
+    <p v-if="store.loading">Učitavanje...</p>
     <p v-else-if="store.error">{{ store.error }}</p>
 
     <div v-else>
       <!-- two-way binding -->
       <SearchFilter v-model="query" v-model:maxTime="maxTime" />
 
-      <p>Showing {{ filtered.length }} of {{ store.recipes.length }}</p>
+      <p>Prikazano {{ filtered.length }} od {{ store.recipes.length }}</p>
 
       <div class="list">
         <RecipeCard
@@ -22,7 +22,7 @@
         />
       </div>
 
-      <p v-if="filtered.length === 0">No recipes found.</p>
+      <p v-if="filtered.length === 0">Nema pronađenih recepata.</p>
     </div>
   </section>
 </template>
@@ -65,7 +65,8 @@ function openDetail(id) {
 <style>
 .list {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
+  margin-top: 12px;
 }
 </style>

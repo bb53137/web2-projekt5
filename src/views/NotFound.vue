@@ -1,6 +1,7 @@
 <template>
   <section>
     <h1>404</h1>
-    <p>Page not found.</p>
+    <p>Ova stranica ne postoji.</p>
+    <RouterLink to="/">Vrati se na početnu</RouterLink>
   </section>
 </template>

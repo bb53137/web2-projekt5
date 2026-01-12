@@ -5,16 +5,15 @@
         <div class="brand">
           <div class="dot" />
           <div>
-            <div class="title">Mini Cookbook</div>
-            <div class="sub">Anonymous Vue3 SPA</div>
+            <div class="title">Mini kuharica</div>
           </div>
         </div>
 
         <nav class="nav">
-          <RouterLink to="/" class="nav-link">Home</RouterLink>
-          <RouterLink to="/recipes" class="nav-link">Recipes</RouterLink>
-          <RouterLink to="/favorites" class="nav-link">Favorites</RouterLink>
-          <RouterLink to="/about" class="nav-link">About</RouterLink>
+          <RouterLink to="/" class="nav-link">Početna</RouterLink>
+          <RouterLink to="/recipes" class="nav-link">Recepti</RouterLink>
+          <RouterLink to="/favorites" class="nav-link">Omiljeni</RouterLink>
+          <RouterLink to="/about" class="nav-link">O aplikaciji</RouterLink>
         </nav>
       </div>
     </header>
@@ -25,8 +24,6 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <span class="muted">Vue3 + Router + Pinia</span>
-        <span class="muted">Course assignment</span>
       </div>
     </footer>
   </div>
@@ -34,10 +31,8 @@
 
 <style>
 .topbar {
-  background: white;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
+  background: linear-gradient(90deg, #6366f1, #0ea5e9);
+  color: white;
 }
 
 .topbar-inner {
@@ -63,15 +58,17 @@
 .nav { display: flex; gap: 10px; flex-wrap: wrap; }
 
 .nav-link {
+  color: white;
   text-decoration: none;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 10px;
-  color: inherit;
 }
 
+
 .nav-link.router-link-active {
-  background: rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.25);
 }
+
 
 .footer { border-top: 1px solid rgba(0,0,0,0.08); padding: 16px 0; }
 .footer-inner { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
