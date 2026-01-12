@@ -1,23 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+// Lazy loading (učitava stranice po potrebi)
+const Home = () => import('@/views/Home.vue')
+const Recipes = () => import('@/views/Recipes.vue')
+const RecipeDetail = () => import('@/views/RecipeDetail.vue')
+const Favorites = () => import('@/views/Favorites.vue')
+const About = () => import('@/views/About.vue')
+const NotFound = () => import('@/views/NotFound.vue')
+
+export default createRouter({
+  history: createWebHistory(), // bitno za bookmarkable linkove
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
-  ],
-})
+    { path: '/', name: 'home', component: Home },
+    { path: '/recipes', name: 'recipes', component: Recipes },
+    { path: '/recipe/:id', name: 'recipe-detail', component: RecipeDetail, props: true },
+    { path: '/favorites', name: 'favorites', component: Favorites },
+    { path: '/about', name: 'about', component: About },
 
-export default router
+    // catch-all 404
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound }
+  ]
+})
