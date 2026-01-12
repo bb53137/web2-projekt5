@@ -1,4 +1,4 @@
-// Mock "backend" - radi kao backend jer je sve async (await + sleep)
+//mock backend, radi kao backend, sve je async
 
 const DATA = [
   {

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// Lazy loading (učitava stranice po potrebi)
+//lazy loading
 const Home = () => import('@/views/Home.vue')
 const Recipes = () => import('@/views/Recipes.vue')
 const RecipeDetail = () => import('@/views/RecipeDetail.vue')
@@ -9,7 +9,7 @@ const About = () => import('@/views/About.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 export default createRouter({
-  history: createWebHistory(), // bitno za bookmarkable linkove
+  history: createWebHistory(), //bookmarkable linkovi
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/recipes', name: 'recipes', component: Recipes },
@@ -17,7 +17,7 @@ export default createRouter({
     { path: '/favorites', name: 'favorites', component: Favorites },
     { path: '/about', name: 'about', component: About },
 
-    // catch-all 404
+    // catch all 404
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound }
   ]
 })

@@ -14,7 +14,7 @@ export const useRecipesStore = defineStore('recipes', {
     error: null
   }),
 
-  // computed na razini store-a
+  
   getters: {
     favoriteRecipes(state) {
       return state.recipes.filter((r) => state.favoriteIds.includes(r.id))
