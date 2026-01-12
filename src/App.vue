@@ -1,85 +1,79 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="dot" />
+          <div>
+            <div class="title">Mini Cookbook</div>
+            <div class="sub">Anonymous Vue3 SPA</div>
+          </div>
+        </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <nav class="nav">
+          <RouterLink to="/" class="nav-link">Home</RouterLink>
+          <RouterLink to="/recipes" class="nav-link">Recipes</RouterLink>
+          <RouterLink to="/favorites" class="nav-link">Favorites</RouterLink>
+          <RouterLink to="/about" class="nav-link">About</RouterLink>
+        </nav>
+      </div>
+    </header>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+    <main class="container" style="padding: 16px 0 40px">
+      <RouterView />
+    </main>
 
-  <RouterView />
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="muted">Vue3 + Router + Pinia</span>
+        <span class="muted">Course assignment</span>
+      </div>
+    </footer>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style>
+.topbar {
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  flex-wrap: wrap;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.brand { display: flex; align-items: center; gap: 10px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(0,0,0,0.55); }
+.title { font-weight: 700; }
+.sub { font-size: 12px; opacity: 0.7; }
+
+.nav { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.nav-link {
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: inherit;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.nav-link.router-link-active {
+  background: rgba(0,0,0,0.06);
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+.footer { border-top: 1px solid rgba(0,0,0,0.08); padding: 16px 0; }
+.footer-inner { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.muted { opacity: 0.7; }
 </style>
