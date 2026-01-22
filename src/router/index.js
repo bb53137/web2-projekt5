@@ -17,7 +17,7 @@ export default createRouter({
     { path: '/favorites', name: 'favorites', component: Favorites },
     { path: '/about', name: 'about', component: About },
 
-    // catch all 404
+    //catch all 404
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound }
   ]
 })
